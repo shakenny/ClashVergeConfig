@@ -60,67 +60,67 @@ const ruleProviders = {
   "aigc-custom": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/rule-custom/aigc-custom.yaml",
+    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/rule-custom/aigc-custom.yaml",
     "path": "./ruleset/blackmatrix7/aigc-custom.yaml"
   },
   "au-proxy-custom": {
     ...ruleProviderCommon,
     "behavior": "domain",
-    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/rule-custom/au-proxy-custom.yaml",
+    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/rule-custom/au-proxy-custom.yaml",
     "path": "./ruleset/custom/au-proxy-custom.yaml"
   },
   "adult-movie-custom": {
     ...ruleProviderCommon,
     "behavior": "domain",
-    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/rule-custom/adult-movie-custom.yaml",
+    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/rule-custom/adult-movie-custom.yaml",
     "path": "./ruleset/custom/adult-movie-custom.yaml"
   },
   "hk-proxy-custom": {
     ...ruleProviderCommon,
     "behavior": "domain",
-    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/rule-custom/hk-proxy-custom.yaml",
+    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/rule-custom/hk-proxy-custom.yaml",
     "path": "./ruleset/custom/hk-proxy-custom.yaml"
   },
   "hktv-custom": {
     ...ruleProviderCommon,
     "behavior": "domain",
-    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/rule-custom/hktv-custom.yaml",
+    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/rule-custom/hktv-custom.yaml",
     "path": "./ruleset/custom/hktv-custom.yaml"
   },
   "iptool-custom": {
     ...ruleProviderCommon,
     "behavior": "domain",
-    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/rule-custom/iptool-custom.yaml",
+    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/rule-custom/iptool-custom.yaml",
     "path": "./ruleset/custom/iptool-custom.yaml"
   },
   "netflix-custom": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/rule-custom/netflix-custom.yaml",
+    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/rule-custom/netflix-custom.yaml",
     "path": "./ruleset/custom/netflix-custom.yaml"
   },
   "sg-proxy-custom": {
     ...ruleProviderCommon,
     "behavior": "domain",
-    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/rule-custom/sg-proxy-custom.yaml",
+    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/rule-custom/sg-proxy-custom.yaml",
     "path": "./ruleset/custom/sg-proxy-custom.yaml"
   },
   "speedtest-custom": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/rule-custom/speedtest-custom.yaml",
+    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/rule-custom/speedtest-custom.yaml",
     "path": "./ruleset/custom/speedtest-custom.yaml"
   },
   "us-proxy-custom": {
     ...ruleProviderCommon,
     "behavior": "domain",
-    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/rule-custom/us-proxy-custom.yaml",
+    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/rule-custom/us-proxy-custom.yaml",
     "path": "./ruleset/custom/us-proxy-custom.yaml"
   },
   "proxy-custom": {
     ...ruleProviderCommon,
     "behavior": "domain",
-    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/rule-custom/proxy-custom.yaml",
+    "url": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/rule-custom/proxy-custom.yaml",
     "path": "./ruleset/custom/proxy-custom.yaml"
   },
   "icloud": {
@@ -291,7 +291,7 @@ function main(config) {
       "name": "香港电视",
       "type": "select",
       "proxies": ["DIRECT", "手动切换", "香港自动","REJECT"],
-      "icon": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/svg/icon_TV.svg"
+      "icon": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/svg/icon_TV.svg"
     },
     {
       ...groupBaseOption,
@@ -326,7 +326,7 @@ function main(config) {
       "name": "网络工具",
       "type": "select",
       "proxies": ["DIRECT", "手动切换", "亚太自动", "日台新韩自动", "香港自动", "台湾自动", "日本自动", "新加坡自动", "韩国自动", "澳新自动", "美国自动", "加拿大自动", "欧洲自动", "南美自动", "东南亚自动", "REJECT"],
-      "icon": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/svg/ip_tool.svg"
+      "icon": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/svg/ip_tool.svg"
     },
     {
       ...groupBaseOption,
@@ -393,7 +393,7 @@ function main(config) {
       "type": "url-test",
       "include-all": true,
       "filter": "JP|🇯🇵|日本|TW|🇹🇼|台湾|SG|🇸🇬|新加坡|KR|🇰🇷|韩国|HK|🇭🇰|香港|AU|🇦🇺|澳大利亚|NZ|🇳🇿|新西兰|ID|🇮🇩|印尼|印度尼西亚|MY|🇲🇾|马来西亚|TH|🇹🇭|泰国|VN|🇻🇳|越南|PH|🇵🇭|菲律宾",
-      "icon": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/svg/asia_pacific.svg"
+      "icon": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/svg/asia_pacific.svg"
     },
     {
       ...groupBaseOption,
@@ -401,7 +401,7 @@ function main(config) {
       "type": "url-test",
       "include-all": true,
       "filter": "JP|🇯🇵|日本|TW|🇹🇼|台湾|SG|🇸🇬|新加坡|KR|🇰🇷|韩国",
-      "icon": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/svg/asia.svg"
+      "icon": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/svg/asia.svg"
     },
     {
       ...groupBaseOption,
@@ -473,7 +473,7 @@ function main(config) {
       "type": "url-test",
       "include-all": true,
       "filter": "DE|🇩🇪|德国|Germany|GB|🇬🇧|英国|United Kingdom|FR|🇫🇷|法国|France|IT|🇮🇹|意大利|Italy|ES|🇪🇸|西班牙|Spain|NL|🇳🇱|荷兰|Netherlands|CH|🇨🇭|瑞士|Switzerland",
-      "icon": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/svg/europe.svg"
+      "icon": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/svg/europe.svg"
     },
     {
       ...groupBaseOption,
@@ -481,7 +481,7 @@ function main(config) {
       "type": "url-test",
       "include-all": true,
       "filter": "BR|🇧🇷|巴西|Brazil|AR|🇦🇷|阿根廷|Argentina|CL|🇨🇱|智利|Chile|PE|🇵🇪|秘鲁|Peru|CO|🇨🇴|哥伦比亚|Colombia",
-      "icon": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/svg/south_america.svg"
+      "icon": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/svg/south_america.svg"
     },
     {
       ...groupBaseOption,
@@ -489,7 +489,7 @@ function main(config) {
       "type": "url-test",
       "include-all": true,
       "filter": "ID|🇮🇩|印尼|印度尼西亚|Indonesia|MY|🇲🇾|马来西亚|Malaysia|TH|🇹🇭|泰国|Thailand|VN|🇻🇳|越南|Vietnam|PH|🇵🇭|菲律宾|Philippines",
-      "icon": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/main/svg/southeast_asia.svg"
+      "icon": "https://raw.githubusercontent.com/shakenny/ClashVergeConfig/refs/heads/main/svg/southeast_asia.svg"
     },
     {
       ...groupBaseOption,
