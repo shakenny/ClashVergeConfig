@@ -1,0 +1,15 @@
+payload:
+  # 澳洲相关网站规则
+  
+  # 域名后缀匹配
+  - DOMAIN-SUFFIX,realestate.com.au
+  - DOMAIN-SUFFIX,bettereducation.com.au
+  - DOMAIN-SUFFIX,seek.com.au
+  - DOMAIN-SUFFIX,vic.edu.au
+  - DOMAIN-SUFFIX,4dlotto.com.au
+  - DOMAIN-SUFFIX,jinriaozhou.com
+  - DOMAIN-SUFFIX,sydneytoday.com
+  - DOMAIN-SUFFIX,meltoday.com
+  - DOMAIN-SUFFIX,qldtoday.com
+  - DOMAIN-SUFFIX,cio.com.au
+  - DOMAIN-SUFFIX,jobabc.com

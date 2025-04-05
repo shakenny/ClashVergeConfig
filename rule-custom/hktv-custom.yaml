@@ -1,0 +1,11 @@
+payload:
+  # 香港电视直播规则
+  
+  # 域名后缀匹配
+  - DOMAIN-SUFFIX,content.stream-link.org
+  - DOMAIN-SUFFIX,epg.pw
+  - DOMAIN-SUFFIX,stream-link.live
+  - DOMAIN-SUFFIX,stream-link.online
+  - DOMAIN-SUFFIX,stream-link.org
+  - DOMAIN-SUFFIX,live.fanmingming.com
+  - DOMAIN-SUFFIX,gh.ttryxd.cn

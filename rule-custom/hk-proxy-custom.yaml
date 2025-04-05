@@ -1,0 +1,7 @@
+payload:
+  # 香港相关网站规则
+  
+  # 域名后缀匹配
+  - DOMAIN-SUFFIX,whatsapp.com
+  - DOMAIN-SUFFIX,whatsapp.net
+  - DOMAIN-SUFFIX,nodeseek.com

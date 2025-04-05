@@ -1,0 +1,32 @@
+payload:
+  # 美国相关网站规则
+  
+  # 域名后缀匹配
+  - DOMAIN-SUFFIX,bard.google.com
+  - DOMAIN-SUFFIX,anthropic.com
+  - DOMAIN-SUFFIX,app.heygen.com
+  - DOMAIN-SUFFIX,bing.com
+  - DOMAIN-SUFFIX,canva.com
+  - DOMAIN-SUFFIX,character.ai
+  - DOMAIN-SUFFIX,claude.ai
+  - DOMAIN-SUFFIX,d-id.com
+  - DOMAIN-SUFFIX,discord.com
+  - DOMAIN-SUFFIX,gemini.google.com
+  - DOMAIN-SUFFIX,heygen.com
+  - DOMAIN-SUFFIX,ion.krypt.asia
+  - DOMAIN-SUFFIX,ion.krypt.com
+  - DOMAIN-SUFFIX,leonardo.ai
+  - DOMAIN-SUFFIX,midjourney.com
+  - DOMAIN-SUFFIX,paypal.com
+  - DOMAIN-SUFFIX,prompthero.com
+  - DOMAIN-SUFFIX,slack.com
+  - DOMAIN-SUFFIX,voice.google.com
+  - DOMAIN-SUFFIX,copilot.microsoft.com
+  - DOMAIN-SUFFIX,dolby.com
+  - DOMAIN-SUFFIX,temu.com
+  - DOMAIN-SUFFIX,indeed.com
+  - DOMAIN-SUFFIX,webinar.gartner.com
+  - DOMAIN-SUFFIX,gartner.com
+  - DOMAIN-SUFFIX,cdn-static.bizzabo.com
+  - DOMAIN-SUFFIX,binance.com
+  - DOMAIN-SUFFIX,marketwebb.blue

@@ -1,0 +1,7 @@
+payload:
+  # 新加坡相关网站规则
+  
+  # 域名后缀匹配
+  - DOMAIN-SUFFIX,tiktok.com
+  - DOMAIN-SUFFIX,tiktok.net
+  - DOMAIN-SUFFIX,singtel.com

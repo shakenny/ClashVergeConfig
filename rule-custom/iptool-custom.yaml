@@ -1,0 +1,12 @@
+payload:
+  # IP工具相关规则
+  
+  # 域名后缀匹配
+  - DOMAIN-SUFFIX,whoer.net
+  - DOMAIN-SUFFIX,whoer.com
+  - DOMAIN-SUFFIX,ipinfo.io
+  - DOMAIN-SUFFIX,ipleak.net
+  - DOMAIN-SUFFIX,speedtest.net
+  - DOMAIN-SUFFIX,ip2world.com
+  - DOMAIN-SUFFIX,myip.com
+  - DOMAIN-SUFFIX,api.ipify.org
