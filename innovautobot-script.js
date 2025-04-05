@@ -205,11 +205,11 @@ const ruleProviders = {
 // 规则
 const rules = [
   // 自定义规则
-  "DOMAIN-SUFFIX,googleapis.cn,手动切换", // Google服务
-  "DOMAIN-SUFFIX,gstatic.com,手动切换", // Google静态资源
-  "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,手动切换", // Google Play下载服务
-  "DOMAIN-SUFFIX,github.io,手动切换", // Github Pages
-  "DOMAIN,v2rayse.com,手动切换", // V2rayse节点工具
+  "DOMAIN-SUFFIX,googleapis.cn,香港节点", // Google服务
+  "DOMAIN-SUFFIX,gstatic.com,香港节点", // Google静态资源
+  "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,香港节点", // Google Play下载服务
+  "DOMAIN-SUFFIX,github.io,香港节点", // Github Pages
+  "DOMAIN,v2rayse.com,香港节点", // V2rayse节点工具
   // blackmatrix7 规则集
   "RULE-SET,aigc-Loyalsoldier,人工智能",
   // Innovautobot 规则集
@@ -270,6 +270,7 @@ function main(config) {
       "type": "select",
       // "proxies": ["延迟选优", "故障转移", "负载均衡(散列)", "负载均衡(轮询)"],
       "include-all": true,
+      "filter": "^(?!.*?(剩余流量|官网|套餐|到期|重置|更新|流量|电报|群|官方|网站)).*$",
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/adjust.svg"
     },
     {
@@ -298,28 +299,28 @@ function main(config) {
       "name": "香港节点",
       "type": "select",
       "proxies": ["DIRECT", "手动切换", "香港自动","REJECT"],
-      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/hk.svg"
+      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/hk.svg"
     },
     {
       ...groupBaseOption,
       "name": "新加坡节点",
       "type": "select",
       "proxies": ["DIRECT", "手动切换", "新加坡自动","REJECT"],
-      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/sg.svg"
+      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/sg.svg"
     },
     {
       ...groupBaseOption,
       "name": "美国节点",
       "type": "select",
       "proxies": ["DIRECT", "手动切换", "美国自动","REJECT"],
-      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/us.svg"
+      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/us.svg"
     },
     {
       ...groupBaseOption,
       "name": "澳大利亚节点",
       "type": "select",
       "proxies": ["DIRECT", "手动切换", "澳新自动","REJECT"],
-      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/au.svg"
+      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/au.svg"
     },
     {
       ...groupBaseOption,
@@ -362,29 +363,64 @@ function main(config) {
       "type": "url-test",
       "tolerance": 100,
       "include-all": true,
+      "filter": "^(?!.*?(剩余流量|官网|套餐|到期|重置|更新|流量|电报|群|官方|网站)).*$",
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/speed.svg"
     },
+    // fallback工作方式：按顺序逐个测试节点，当发现可用节点时立即使用，如果当前节点故障则自动切换到下一个
+    /*
+       可用节点列表：[香港1, 香港2, 新加坡1, 日本1]
+        - 首先测试香港1，如果正常就用香港1
+        - 如果香港1故障，自动切换到香港2
+        - 如果香港2也故障，切换到新加坡1
+        - 以此类推
+    */
     {
       ...groupBaseOption,
       "name": "故障转移",
       "type": "fallback",
       "include-all": true,
+      "filter": "^(?!.*?(剩余流量|官网|套餐|到期|重置|更新|流量|电报|群|官方|网站)).*$",
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/ambulance.svg"
     },
+    // 负载均衡(散列)工作方式：根据请求的特征（如目标网站）计算哈希值，相同的请求总是使用相同的节点
+    /*
+       访问 Google.com：
+        - 计算 Google.com 的哈希值 = 12345
+        - 12345 对应到香港1节点
+        - 之后所有访问 Google.com 的请求都会使用香港1节点
+
+       访问 Youtube.com：
+        - 计算 Youtube.com 的哈希值 = 67890
+        - 67890 对应到新加坡1节点
+        - 之后所有访问 Youtube.com 的请求都会使用新加坡1节点
+    */
     {
       ...groupBaseOption,
       "name": "负载均衡(散列)",
       "type": "load-balance",
       "strategy": "consistent-hashing",
       "include-all": true,
+      "filter": "^(?!.*?(剩余流量|官网|套餐|到期|重置|更新|流量|电报|群|官方|网站)).*$",
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/merry_go.svg"
     },
+    // 负载均衡(轮询)工作方式：轮流使用每个节点，均匀分配负载
+    /*
+       可用节点列表：[香港1, 香港2, 新加坡1, 日本1]
+
+        第1个请求 → 使用香港1
+        第2个请求 → 使用香港2
+        第3个请求 → 使用新加坡1
+        第4个请求 → 使用日本1
+        第5个请求 → 又回到香港1
+        ...以此循环
+    */
     {
       ...groupBaseOption,
       "name": "负载均衡(轮询)",
       "type": "load-balance",
       "strategy": "round-robin",
       "include-all": true,
+      "filter": "^(?!.*?(剩余流量|官网|套餐|到期|重置|更新|流量|电报|群|官方|网站)).*$",
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/balance.svg"
     },
     {
@@ -441,7 +477,7 @@ function main(config) {
       "type": "url-test",
       "include-all": true,
       "filter": "KR|🇰🇷|韩国|Korea",
-      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/kr.svg"
+      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/kr.svg"
     },
     {
       ...groupBaseOption,
@@ -449,7 +485,7 @@ function main(config) {
       "type": "url-test",
       "include-all": true,
       "filter": "AU|🇦🇺|澳大利亚|Australia|NZ|🇳🇿|新西兰|New Zealand",
-      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/au.svg"
+      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/au.svg"
     },
     {
       ...groupBaseOption,
